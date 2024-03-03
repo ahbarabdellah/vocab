@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:langapp/Config/colors.dart';
 
 class DomainBtn extends StatelessWidget {
-  const DomainBtn({super.key});
-
+  const DomainBtn({required this.title, required this.imgPath});
+  final String title;
+  final String imgPath;
   @override
   Widget build(BuildContext context) {
     return Padding(

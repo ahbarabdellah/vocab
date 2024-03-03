@@ -7,14 +7,37 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Vocalit"),
-        centerTitle: true,
-      ),
-      body: GridView.count(
-        crossAxisCount: 3,
-        children: List.generate(30, (index) => DomainBtn()),
-      ),
-    );
+        appBar: AppBar(
+          title: Text("Vocalit"),
+          centerTitle: true,
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Search',
+                ),
+              ),
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 3,
+                children: List.generate(
+                    30,
+                    (index) => DomainBtn(
+                          title: "french",
+                          imgPath: "somepng",
+                        )),
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ));
   }
 }
